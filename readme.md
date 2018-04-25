@@ -9,7 +9,7 @@ A simple reading list app created with Laravel and VueJs.
 -   Detail page with  of author, publication date, and title, and related books
 -   Search Google Books API for new books to add to list
 
-## Intsallation
+## Installation
 Clone the repository
 
     https://github.com/Gadurp1/reading.git

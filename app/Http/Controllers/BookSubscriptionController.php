@@ -21,7 +21,7 @@ class BookSubscriptionController extends Controller
    * Load reading List.
    *
    * @param  int  $id
-   * @return Response
+   * @return \Illuminate\Http\Response
    */
   public function index()
   {
@@ -31,8 +31,6 @@ class BookSubscriptionController extends Controller
   /**
    * Update the specified resource in storage.
    *
-   * @param  int  $id
-   * @return Response
    */
   public function update(Request $request)
   {
@@ -41,9 +39,8 @@ class BookSubscriptionController extends Controller
   }
 
   /**
-   * Store a newly created resource in storage.
+   * Remove book from users reading list.
    *
-   * @return Response
    */
   public function destroy($id)
   {
