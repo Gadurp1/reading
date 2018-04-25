@@ -26,29 +26,4 @@ class BookSubscription extends Model
     {
        return $this->belongsTo('App\Book');
     }
-
-    /**
-    * Get all books subscribed to.
-    */
-    public function reorder($values)
-    {
-        $table = BookSubscription::getModel()->getTable();
-
-        $cases = [];
-        $ids = [];
-        $params = [];
-
-        foreach ($values as $id => $value) {
-           $id = (int) $id;
-           $cases[] = "WHEN {$id} then ?";
-           $params[] = $value;
-           $ids[] = $id;
-        }
-
-        $ids = implode(',', $ids);
-        $cases = implode(' ', $cases);
-        $params[] = Carbon::now();
-
-        return \DB::update("UPDATE `{$table}` SET `value` = CASE `id` {$cases} END WHERE `id` in ({$ids})", $params);
-    }
 }
