@@ -85,7 +85,7 @@
               return new Date( this.book.volumeInfo.publishedDate).getFullYear();
           },
           slug() {
-              return this.book.volumeInfo.title.split(' ').join('+')
+              return this.book.volumeInfo.title.split(' ').join('-')
           }
       },
       methods: {

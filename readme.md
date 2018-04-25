@@ -1,8 +1,7 @@
 # Laravel / Vue Reading List App
 
 
-![Reading List Main Dashboard](https://preview.ibb.co/hRWqic/Screen_Shot_2018_04_24_at_9_19_18_PM.png)
-
+![enter image description here](http://g.recordit.co/AqIqf76pL6.gif)
 A simple reading list app created with Laravel and VueJs.  
 -   Add or remove books from a list
 -   Drag & drop order of the books in the list
@@ -52,4 +51,4 @@ Laravel Debugbar
 https://github.com/barryvdh/laravel-debugbar
 
 Vue Draggable
- https://github.com/SortableJS/Vue.Draggable 
+ https://github.com/SortableJS/Vue.Draggable

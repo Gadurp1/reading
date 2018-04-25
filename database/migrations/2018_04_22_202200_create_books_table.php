@@ -13,6 +13,7 @@ class CreateBooksTable extends Migration {
 				$table->integer('author_id')->unsigned();;
 				$table->string('title', 255)->index();
 				$table->string('description');
+				$table->string('slug');
 				$table->string('image', 500);
 				$table->integer('page_count');
 				$table->timestamps();
