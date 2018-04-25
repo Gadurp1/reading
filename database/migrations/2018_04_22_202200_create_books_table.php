@@ -12,7 +12,7 @@ class CreateBooksTable extends Migration {
 				$table->string('google_id');
 				$table->integer('author_id')->unsigned();;
 				$table->string('title', 255)->index();
-				$table->string('description');
+				$table->text('description');
 				$table->string('slug');
 				$table->string('image', 500);
 				$table->integer('page_count');

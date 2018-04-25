@@ -13,12 +13,12 @@
 
 
 Auth::routes();
-Route::get('/', 'BookSubscriptionController@index');
+Route::get('/', 'UserBookController@index');
 
-Route::get('reading-list', 'BookSubscriptionController@index');
-Route::delete('reading-list/{id}', 'BookSubscriptionController@destroy');
+Route::get('reading-list', 'UserBookController@index');
+Route::delete('reading-list/{id}', 'UserBookController@destroy');
 
-Route::put('reorder-list', 'BookSubscriptionController@update');
+Route::put('reorder-list', 'UserBookController@update');
 
 Route::get('books', 'BookController@index');
 Route::post('books', 'BookController@store');

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateBookRequest;
 use App\Book;
-use App\BookSubscription;
+use App\UserBook;
 use App\Author;
 
 class BookController extends Controller
@@ -26,7 +26,7 @@ class BookController extends Controller
     */
   public function index(Request $request)
   {
-     $sort = 'book_subscriptions.order';
+     $sort = 'user_books.order';
      $order = 'asc';
 
      if ( $request->has('sort') &&  $request->has('order')) {
@@ -37,9 +37,9 @@ class BookController extends Controller
      $reading_list = auth()->user()
          ->readingList()
          ->select(
-             'book_subscriptions.id',
+             'user_books.id',
              'books.image',
-             'book_subscriptions.order',
+             'user_books.order',
              'books.google_id',
              'authors.last_name'
 
@@ -47,7 +47,7 @@ class BookController extends Controller
          ->orderBy($sort, $order)
          ->get();
 
-     return  json_encode($reading_list);
+     return response()->json($reading_list);
   }
 
   /**

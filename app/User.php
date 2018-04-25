@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Book;
-use App\BookSubscription;
+use App\UserBook;
 
 class User extends Authenticatable
 {
@@ -34,8 +34,8 @@ class User extends Authenticatable
     */
     public function readingList()
     {
-      return $this->hasMany('App\BookSubscription')
-          ->join('books', 'book_subscriptions.book_id', '=', 'books.id')
+      return $this->hasMany('App\UserBook')
+          ->join('books', 'user_books.book_id', '=', 'books.id')
           ->join('authors', 'books.author_id', '=', 'authors.id');
     }
 
@@ -45,9 +45,9 @@ class User extends Authenticatable
     public function subscribedBooks()
     {
         return $this->hasManyThrough(
-            'App\BookSubscription',
+            'App\UserBook',
             'App\Book',
-            'book_subscriptions.user_id',
+            'user_books.user_id',
             'book_id',
             'id',
             'id'
@@ -60,7 +60,7 @@ class User extends Authenticatable
     public function subscriptions()
     {
         return $this->hasMany(
-            'App\BookSubscription', 'user_id'
+            'App\UserBook', 'user_id'
         );
     }
 
@@ -69,7 +69,7 @@ class User extends Authenticatable
     */
     public function subscribeToBook($book_id)
     {
-        $sub = new BookSubscription;
+        $sub = new UserBook;
         $sub->user_id = $this->id;
         $sub->book_id = $book_id;
         $sub->order   = $this->subscribedBooks()->count() + 1;

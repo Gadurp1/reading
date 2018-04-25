@@ -26,7 +26,7 @@ class Book extends Model
     */
     public function subscribedBooks()
     {
-        return $this->hasMany('App\BookSubscription');
+        return $this->hasMany('App\UserBook');
     }
 
     /**
