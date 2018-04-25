@@ -1,20 +1,15 @@
 <template lang="html">
   <div class="">
     <div class="row container mt-5">
-      <div id="site__bg"></div>
-      <div class="col-2">
+      <div class="col-md-2 ">
         <img :src="book.volumeInfo.imageLinks.thumbnail" class="img-responsive" alt="">
-        <br>
-        <br>
-        <label for="" class="site__label"> {{book.volumeInfo.authors[0]}}, {{ publishedDate }}</label>
-        <br>
-        <br>
       </div>
 
-      <div class="col-8 mr-auto">
+      <div class="col-md-8 col-sm-12 ">
         <h1 class="site__title site__title--separator">
             {{ book.volumeInfo.title }}
         </h1>
+        <label for="" class="site__label"> {{book.volumeInfo.authors[0]}}, {{ publishedDate }}</label>
         <p v-html="book.volumeInfo.description"></p>
       </div>
 

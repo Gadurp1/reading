@@ -1,9 +1,9 @@
 <template lang="html">
   <div class="">
     <div class="col-md-2">
-        <a :href="'/google-books/' + google_id " v-show="image">
-          <img :src="image" height="200px" class="img-responsive mb-5" alt="Card image cap">
-        </a>
+      <a :href="'/google-books/' + google_id " v-show="image">
+        <img :src="image" class="img-responsive mb-5 " :alt="title">
+      </a>
     </div>
   </div>
 </template>
@@ -16,9 +16,7 @@
       props: [
           'image',
           'title',
-          'google_id',
-          'description'
-
+          'google_id'
       ],
       computed: {
           saveData() {
