@@ -54,11 +54,12 @@ class GoogleBookSearchController extends Controller
             $book_id = $book->id;
         }
 
-        $g_books = new GoogleBooks(['maxResults' => 5]);
+        $g_books = new GoogleBooks(['maxResults' => 12]);
         $g_books_response = $g_books->volumes->get($id);
         $volume = $g_books_response->__toString();
 
-        $related_books =  $g_books->volumes->search($g_books_response->volumeInfo->authors[0]);
+        $related_books = $g_books->volumes
+            ->search($g_books_response->volumeInfo->authors[0]);
 
         return view('google-books.show', compact('book_id', 'related_books'))
             ->with('volume', $volume);
