@@ -10,7 +10,7 @@
     <title>Reading List</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
     <link href="{{asset('css/custom.css')}}" rel="stylesheet">
 
 </head>
@@ -28,7 +28,6 @@
           </div>
         </div>
       </div>
-
 
     <script src="{{ asset('js/app.js') }}"></script>
     <!-- Icons -->
