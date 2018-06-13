@@ -12,7 +12,7 @@
     <!-- Bootstrap core CSS -->
     <link href="{{asset('sass/app.scss')}}" rel="stylesheet">
     <link href="{{asset('css/custom.css')}}" rel="stylesheet">
-<link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
   <body>
